@@ -1,6 +1,6 @@
 PREFIX = /usr/local
 ARCH = h8300-elf
-BINDIR = $(PREFIX)/BINDIR
+BINDIR = $(PREFIX)/bin
 ADDNAME = $(ARCH)-
 
 AR = $(BINDIR)/$(AADDNAME)ar
