@@ -3,15 +3,15 @@ ARCH = h8300-elf
 BINDIR = $(PREFIX)/bin
 ADDNAME = $(ARCH)-
 
-AR = $(BINDIR)/$(AADDNAME)ar
-AS = $(BINDIR)/$(AADDNAME)as
-CC = $(BINDIR)/$(AADDNAME)gcc
-LD = $(BINDIR)/$(AADDNAME)ld
-NM = $(BINDIR)/$(AADDNAME)nm
-OBJCOPY = $(BINDIR)/$(AADDNAME)objcopy
-OBJDUMP = $(BINDIR)/$(AADDNAME)objdump
-RANLIB = $(BINDIR)/$(AADDNAME)ranlib
-STRIP = $(BINDIR)/$(AADDNAME)strip
+AR = $(BINDIR)/$(ADDNAME)ar
+AS = $(BINDIR)/$(ADDNAME)as
+CC = $(BINDIR)/$(ADDNAME)gcc
+LD = $(BINDIR)/$(ADDNAME)ld
+NM = $(BINDIR)/$(ADDNAME)nm
+OBJCOPY = $(BINDIR)/$(ADDNAME)objcopy
+OBJDUMP = $(BINDIR)/$(ADDNAME)objdump
+RANLIB = $(BINDIR)/$(ADDNAME)ranlib
+STRIP = $(BINDIR)/$(ADDNAME)strip
 
 H8WRITE = ../../tools/h8write/h8write
 
