@@ -112,7 +112,6 @@ int gets(unsigned char *buf)
         c = getc();
         if (c == '\n')
             c = '\0';
-        c = '\0';
         buf[i++] = c;
     } while (c);
     return i - 1;
