@@ -1,8 +1,8 @@
 #ifndef _SERIAL_H_INCLUDED_
 #define _SERIAL_H_INCLUDED_
 
-int serial_init(int index);                       /* ¥Ç¥Ð¥¤¥¹½é´ü²½ */
-int serial_is_send_enable(int index);             /* Á÷¿®²ÄÇ½¤«¡© */
-int serial_send_byte(int index, unsigned char b); /* £±Ê¸»úÁ÷¿® */
+int serial_init(int index);                       /* ï¿½Ç¥Ð¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+int serial_is_send_enable(int index);             /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½ï¿½ */
+int serial_send_byte(int index, unsigned char b); /* ï¿½ï¿½Ê¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 
 #endif

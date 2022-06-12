@@ -4,17 +4,17 @@
 
 static int init(void)
 {
-  /* °Ê²¼¤Ï¥ê¥ó¥«¡¦¥¹¥¯¥ê¥×¥È¤ÇÄêµÁ¤·¤Æ¤¢¤ë¥·¥ó¥Ü¥ë */
+  /* ï¿½Ê²ï¿½ï¿½Ï¥ï¿½ó¥«¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¥È¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¤ï¿½ï¿½ë¥·ï¿½ï¿½Ü¥ï¿½ */
   extern int erodata, data_start, edata, bss_start, ebss;
 
   /*
-   * ¥Ç¡¼¥¿ÎÎ°è¤ÈBSSÎÎ°è¤ò½é´ü²½¤¹¤ë¡¥¤³¤Î½èÍý°Ê¹ß¤Ç¤Ê¤¤¤È¡¤
-   * ¥°¥í¡¼¥Ð¥ëÊÑ¿ô¤¬½é´ü²½¤µ¤ì¤Æ¤¤¤Ê¤¤¤Î¤ÇÃí°Õ¡¥
+   * ï¿½Ç¡ï¿½ï¿½ï¿½ï¿½Î°ï¿½ï¿½BSSï¿½Î°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¡¥ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½Ê¹ß¤Ç¤Ê¤ï¿½ï¿½È¡ï¿½
+   * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¥ï¿½ï¿½Ñ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¤ï¿½ï¿½Ê¤ï¿½ï¿½Î¤ï¿½ï¿½ï¿½ï¿½Õ¡ï¿½
    */
   memcpy(&data_start, &erodata, (long)&edata - (long)&data_start);
   memset(&bss_start, 0, (long)&ebss - (long)&bss_start);
 
-  /* ¥·¥ê¥¢¥ë¤Î½é´ü²½ */
+  /* ï¿½ï¿½ï¿½ê¥¢ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½ */
   serial_init(SERIAL_DEFAULT_DEVICE);
 
   return 0;
@@ -27,10 +27,18 @@ static int static_bss;
 
 static void printval(void)
 {
-  puts("global_data = "); putxval(global_data, 0); puts("\n");
-  puts("global_bss  = "); putxval(global_bss,  0); puts("\n");
-  puts("static_data = "); putxval(static_data, 0); puts("\n");
-  puts("static_bss  = "); putxval(static_bss,  0); puts("\n");
+  puts("global_data = ");
+  putxval(global_data, 0);
+  puts("\n");
+  puts("global_bss  = ");
+  putxval(global_bss, 0);
+  puts("\n");
+  puts("static_data = ");
+  putxval(static_data, 0);
+  puts("\n");
+  puts("static_bss  = ");
+  putxval(static_bss, 0);
+  puts("\n");
 }
 
 int main(void)
@@ -41,9 +49,9 @@ int main(void)
   printval();
   puts("overwrite variables.\n");
   global_data = 0x20;
-  global_bss  = 0x30;
+  global_bss = 0x30;
   static_data = 0x40;
-  static_bss  = 0x50;
+  static_bss = 0x50;
   printval();
 
   while (1)

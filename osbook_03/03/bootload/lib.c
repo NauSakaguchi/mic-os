@@ -22,7 +22,8 @@ void *memcpy(void *dst, const void *src, long len)
 int memcmp(const void *b1, const void *b2, long len)
 {
   const char *p1 = b1, *p2 = b2;
-  for (; len > 0; len--) {
+  for (; len > 0; len--)
+  {
     if (*p1 != *p2)
       return (*p1 > *p2) ? 1 : -1;
     p1++;
@@ -42,16 +43,19 @@ int strlen(const char *s)
 char *strcpy(char *dst, const char *src)
 {
   char *d = dst;
-  for (;; dst++, src++) {
+  for (;; dst++, src++)
+  {
     *dst = *src;
-    if (!*src) break;
+    if (!*src)
+      break;
   }
   return d;
 }
 
 int strcmp(const char *s1, const char *s2)
 {
-  while (*s1 || *s2) {
+  while (*s1 || *s2)
+  {
     if (*s1 != *s2)
       return (*s1 > *s2) ? 1 : -1;
     s1++;
@@ -62,7 +66,8 @@ int strcmp(const char *s1, const char *s2)
 
 int strncmp(const char *s1, const char *s2, int len)
 {
-  while ((*s1 || *s2) && (len > 0)) {
+  while ((*s1 || *s2) && (len > 0))
+  {
     if (*s1 != *s2)
       return (*s1 > *s2) ? 1 : -1;
     s1++;
@@ -72,7 +77,7 @@ int strncmp(const char *s1, const char *s2, int len)
   return 0;
 }
 
-/* £±Ê¸»úÁ÷¿® */
+/* ï¿½ï¿½Ê¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 int putc(unsigned char c)
 {
   if (c == '\n')
@@ -80,7 +85,7 @@ int putc(unsigned char c)
   return serial_send_byte(SERIAL_DEFAULT_DEVICE, c);
 }
 
-/* Ê¸»úÎóÁ÷¿® */
+/* Ê¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 int puts(unsigned char *str)
 {
   while (*str)
@@ -88,7 +93,7 @@ int puts(unsigned char *str)
   return 0;
 }
 
-/* ¿ôÃÍ¤Î16¿ÊÉ½¼¨ */
+/* ï¿½ï¿½ï¿½Í¤ï¿½16ï¿½ï¿½É½ï¿½ï¿½ */
 int putxval(unsigned long value, int column)
 {
   char buf[9];
@@ -100,10 +105,12 @@ int putxval(unsigned long value, int column)
   if (!value && !column)
     column++;
 
-  while (value || column) {
+  while (value || column)
+  {
     *(p--) = "0123456789abcdef"[value & 0xf];
     value >>= 4;
-    if (column) column--;
+    if (column)
+      column--;
   }
 
   puts(p + 1);
