@@ -30,15 +30,12 @@ static void printval(void)
     puts("global_data = ");
     putxval(global_data, 0);
     puts("\n");
-
     puts("global_bss = ");
     putxval(global_bss, 0);
     puts("\n");
-
     puts("static_data = ");
     putxval(static_data, 0);
     puts("\n");
-
     puts("static_bss = ");
     putxval(static_bss, 0);
     puts("\n");
@@ -47,7 +44,6 @@ static void printval(void)
 int main(void)
 {
     init();
-
     puts("Hello World!\n");
 
     printval();

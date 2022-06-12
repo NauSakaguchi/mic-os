@@ -89,9 +89,7 @@ int putc(unsigned char c)
 int puts(unsigned char *str)
 {
     while (*str)
-    {
         putc(*(str++));
-    }
     return 0;
 }
 

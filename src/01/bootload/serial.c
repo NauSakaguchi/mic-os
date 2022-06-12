@@ -22,6 +22,8 @@ struct h8_3069f_sci
 #define H8_3069F_SCI_SMR_CKS_PER4 (1 << 0)
 #define H8_3069F_SCI_SMR_CKS_PER16 (2 << 0)
 #define H8_3069F_SCI_SMR_CKS_PER64 (3 << 0)
+#define H8_3069F_SCI_SMR_MP (1 << 2)
+#define H8_3069F_SCI_SMR_STOP (1 << 3)
 #define H8_3069F_SCI_SMR_OE (1 << 4)
 #define H8_3069F_SCI_SMR_PE (1 << 5)
 #define H8_3069F_SCI_SMR_CHR (1 << 6)
@@ -75,6 +77,7 @@ int serial_is_send_enable(int index)
     return (sci->ssr & H8_3069F_SCI_SSR_TDRE);
 }
 
+/* 一文字送信 */
 int serial_send_byte(int index, unsigned char c)
 {
     volatile struct h8_3069f_sci *sci = regs[index].sci;
