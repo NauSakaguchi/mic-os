@@ -53,7 +53,7 @@ int main(void)
     printval();
     puts("overwrite variables.\n");
     global_data = 0x20;
-    global_bss = 0x20;
+    global_bss = 0x30;
     static_data = 0x30;
     static_bss = 0x40;
     printval();
